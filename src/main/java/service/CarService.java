@@ -2,6 +2,6 @@ package service;
 
 public class CarService {
   public void getCarName(){
-    System.out.println("Honda City");
+    System.out.println("Honda");
   }
 }
