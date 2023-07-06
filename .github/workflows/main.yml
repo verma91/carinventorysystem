@@ -16,6 +16,6 @@ jobs:
       - name: AI Code Review Action
         uses: kentakozuka/github-ai-review@v0.0.3
         with:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           exclude: "**/*.json, **/*.md" # Optional: exclude patterns separated by commas
