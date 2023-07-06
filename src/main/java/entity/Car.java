@@ -10,6 +10,7 @@ import lombok.*;
 public class Car {
     private String make;
 
+    // add model
     private String model;
 
     private int year;
