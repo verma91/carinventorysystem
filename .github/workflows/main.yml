@@ -1,4 +1,4 @@
-name: AI Code Reviewer
+name: AI Code Review Action
 
 on:
   pull_request:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
-      - name: AI Code Reviewer
+      - name: AI Code Review Action
         uses: freeedcom/ai-codereviewer@v2.4.1
         with:
           GITHUB_TOKEN: ${{ secrets.MYGITHUB_TOKEN }}
