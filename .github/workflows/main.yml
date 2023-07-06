@@ -14,8 +14,8 @@ jobs:
         uses: actions/checkout@v3
 
       - name: AI Code Reviewer
-        uses: verma91/ai-code-reviewer@main
+        uses: freeedcom/ai-codereviewer@v2.4.1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MYGITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           exclude: "**/*.json, **/*.md" # Optional: exclude patterns separated by commas
