@@ -1,21 +1,15 @@
-name: AI Code Reviewer
-
-on:
+name: 'code-review'
+on: # rebuild any PRs and main branch changes
   pull_request:
-    types:
-      - opened
-      - synchronize
-permissions: write-all
 jobs:
-  review:
+  code-review:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
-
-      - name: AI Code Reviewer
-        uses: freeedcom/ai-codereviewer@v2.4.1
+      - uses: actions/checkout@v3
+      - uses: gvasilei/AutoReviewer@0.4
+        env:
+          NODE_OPTIONS: '--experimental-fetch'
         with:
-          GITHUB_TOKEN: ${{ secrets.MYGITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          exclude: "**/*.json, **/*.md" # Optional: exclude patterns separated by commas
+          exclude_files: '*.json, *.md, *.yml' # optionally exclude files based on a wildcard expression.
